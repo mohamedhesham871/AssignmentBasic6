@@ -40,22 +40,42 @@ namespace Basic6_c_
             //  Console.WriteLine(Arr[0]);
             #endregion
             #region Q2:Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
-            
-            static void MyFun(int s1,int s2,int s3,int s4, out int sum,out int sub)
+
+            //static void MyFun(int s1,int s2,int s3,int s4, out int sum,out int sub)
+            //{
+            //    sum = s1 + s2 + s3 + s4;
+            //    sub = s1 - s2 - s3 - s4;
+            //}
+
+
+            //Console.WriteLine("enter four numbers \n");
+            //int x1 = int.Parse(Console.ReadLine());
+            //int x2 = int.Parse(Console.ReadLine());
+            //int x3 = int.Parse(Console.ReadLine());
+            //int x4 = int.Parse(Console.ReadLine());
+            //int sum, sub;
+            //MyFun(x1, x2, x3, x4,out sum,out sub);
+            //Console.WriteLine($"sum is {sum} and sub is {sub}");
+            #endregion
+            #region Q3 create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+            static void MinMaxArray(int[] arr,ref int minn,ref int maxx)
             {
-                sum = s1 + s2 + s3 + s4;
-                sub = s1 - s2 - s3 - s4;
+                minn = arr[0];
+                maxx = arr[0];
+                for (int i = 1;i<arr.Length;i++)
+                {
+                    if (arr[i] < minn) minn = arr[i];
+                    if(arr[i] > maxx) maxx = arr[i];
+                }
             }
 
+            int[] arr = { 20, 34, 23, 2, 4324, 42, 3, 1, 203 };
 
-            Console.WriteLine("enter four numbers \n");
-            int x1 = int.Parse(Console.ReadLine());
-            int x2 = int.Parse(Console.ReadLine());
-            int x3 = int.Parse(Console.ReadLine());
-            int x4 = int.Parse(Console.ReadLine());
-            int sum, sub;
-            MyFun(x1, x2, x3, x4,out sum,out sub);
-            Console.WriteLine($"sum is {sum} and sub is {sub}");
+            int min=arr[0];
+            int maxx = arr[0] ;
+            MinMaxArray(arr, ref min, ref maxx);
+
+            Console.WriteLine($"min number is : {min}\nmax number is : {maxx}");
             #endregion
         }
 
